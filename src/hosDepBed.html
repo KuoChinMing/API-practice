@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hospital department bed</title>
+    <!-- font awesome icon -->
+    <script src="https://kit.fontawesome.com/96bf1a8fa2.js"></script>
+    <link rel="stylesheet" href="css/pages/hosDepBed.css">
+</head>
+
+<body>
+    <header class="header flex-wrap">
+        <!-- <i class="fas fa-bars header--nav-bar"></i> -->
+        <a class="header--home flex-wrap" href="hosDepBed.html">
+            <img class="header--logo" src="images/logo-blue.png" alt="">
+            <h1 class="header--title">巡房系統</h1>
+        </a>
+        <span class="header--log-out" onClick="logOut()">Log out</span>
+    </header>
+
+    <aside class="side-nav">
+        <h2 class="side-nav--header">病房</h2>
+        <ul class="side-nav--body"></ul>
+    </aside>
+    <article class="content">
+        <h2 class="content--header"></h2>
+        <div class="content--body">
+            <i class="no-data"></i>
+        </div>
+        <div class="patient-info">
+            <i class="no-data no-data--admission">--- 請選取病患 ---</i>
+        </div>
+    </article>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/hosDepBed.js"></script>
+</body>
+
+</html>

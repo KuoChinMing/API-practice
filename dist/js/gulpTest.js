@@ -1,0 +1,2 @@
+console.log("1234"),console.log("ssss");
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImd1bHBUZXN0LmpzIl0sIm5hbWVzIjpbImNvbnNvbGUiLCJsb2ciXSwibWFwcGluZ3MiOiJBQUFBQSxRQUFRQyxJQUFJLFFBQ1pELFFBQVFDLElBQUkiLCJmaWxlIjoiZ3VscFRlc3QuanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zb2xlLmxvZygnMTIzNCcpO1xuY29uc29sZS5sb2coJ3Nzc3MnKTsiXX0=

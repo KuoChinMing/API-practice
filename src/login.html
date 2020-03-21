@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lexend+Deca|Noto+Sans+TC&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/pages/login.css" />
+    <!-- font awesome icon -->
+    <script src="https://kit.fontawesome.com/96bf1a8fa2.js"></script>
+    <title>API practice</title>
+  </head>
+
+  <body>
+    <div></div>
+    <div class="login">
+      <div>
+        <div class="login--logo">
+          <img class="login--logo" src="images/logo.png" alt="logo" />
+        </div>
+        <div class="login--input-group">
+          <label for="account"
+            >Username
+            <input
+              class="login--input"
+              type="text"
+              id="account"
+              value="ebm_admin"
+            />
+          </label>
+        </div>
+        <div class="login--input-group">
+          <label for="password"
+            >Password
+            <input
+              class="login--input"
+              type="password"
+              id="password"
+              value="123"
+            />
+          </label>
+          <i class="toggle-password far fa-eye-slash"></i>
+        </div>
+        <p id="errorMessage">
+          Username or Password is incorrect!<br />please input again.
+        </p>
+        <div class="login--button">
+          <button onclick="login()">login</button>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

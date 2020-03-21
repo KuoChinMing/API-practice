@@ -1,0 +1,307 @@
+@import '../variables.scss';
+@import '../base.scss';
+
+.flex-wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.spinner-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    height: 100%;
+}
+
+.spinner {
+    vertical-align: bottom;
+    height: 27px;
+}
+
+// .spinner {
+//     display: flex;
+//     width: 100%;
+//     justify-content: center;
+//     align-content: center;
+//     img {
+//         width: 27px;
+//     }
+// }
+
+.header {
+    position: fixed;
+    height: $header-height;
+    width: 100%;
+    background-color: $my-gray-color;
+    border-style: solid;
+    border-width: 0;
+    padding: 5px 10px 5px 10px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    &--home {
+        text-decoration: none;
+        margin-left: 10px;
+    }
+    // &--nav-bar {
+    //     font-size: 1.5rem;
+    //     margin-right: 1rem;
+    //     margin-left: 1rem;
+    //     cursor: pointer;
+    //     color: $second-color;
+    // }
+    &--title {
+        margin-left: 5px;
+        font-size: 20px;
+        color: $second-color;
+    }
+    &--logo {
+        height: 2rem; 
+    }
+    &--log-out {
+        margin-left: auto;
+        color: $second-color;
+        padding: 6px 12px;
+        &:hover {
+            cursor: pointer;
+        }
+        &:active {
+            background-color: darken($my-gray-color, 10%);
+            border-radius: 5px;
+            color: darken($second-color, 10%);
+        }
+    }
+}
+
+.side-nav {
+    position: fixed;
+    top: $header-height;
+    height: calc(100% - #{$header-height});
+    width: 250px;
+    left: -200px;
+    border-right: 1px solid $my-darkgray-color;
+    background-color: lighten($my-gray-color, 2%);
+    z-index: 500;
+    transition: left 0.3s;
+    display: flex; //let body height equals left height
+    flex-direction: column;
+    &--header {
+        padding: .8rem;
+        font-size: 1.2rem;
+        color: darken($my-gray-color, 80%);
+        border-bottom: 1px solid $my-darkgray-color;
+        background-color: lighten($my-gray-color, 2%);
+    }
+    &--body {
+        padding-top: 0.5rem;
+        overflow: scroll;
+    }
+    &--item {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+        color: darken($my-gray-color, 70%);
+        transition: background-color 0.2s;
+        &:hover {
+            cursor: pointer;
+            color: darken($my-gray-color, 80%);
+            background-color: rgba($my-darkgray-color, 0.6);
+        }
+        &__clicked {
+            background-color: rgba($prime-color, 0.2);
+            color: $second-color;
+            &:hover {
+                background-color: rgba(197, 217, 230, 0.6);
+                color: $second-color;
+            }
+        }
+    }
+    &:hover {
+        left: 0;
+        transition: left 0.2s;
+    }
+}
+
+.content {
+    position: relative;
+    top: $header-height;
+    padding-left: 50px; //side-nav collapse width
+    padding-right: $patient-info-width;
+    &--header {
+        position: sticky;
+        top: $header-height;
+        background-color: lighten($my-gray-color, 2%);
+        padding: .8rem;
+        font-size: 1.2rem;
+        color: darken($my-gray-color, 80%);
+        border-bottom: 1px solid $my-darkgray-color;
+    }
+}
+
+.admission-status {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    tr {
+        width: 100%;
+        color: darken($my-gray-color, 60%);
+        border-bottom: 1px solid $my-darkgray-color;
+        &.admission-status--data {
+            // transition: background-color 0.2s;
+            &:hover {
+                cursor: pointer;
+                color: darken($my-gray-color, 80%);
+                background-color: $my-gray-color;
+            }
+            &__clicked {
+                background-color: rgba($prime-color, 0.2);
+                color: $second-color;
+                &:hover {
+                    background-color: rgba(197, 217, 230, 0.6);
+                    color: $second-color;
+                }
+            }
+        }
+    }
+    tr:first-child th {
+        font-size: 1rem;
+        position: sticky;
+        padding: .8rem 1rem;
+        text-align: left;
+        top: calc(#{$header-height} + 53.59px);
+        border-bottom: 1px solid $my-darkgray-color;
+        background-color: lighten($my-gray-color, 2%);
+    }
+    td {
+        padding: .8rem 1rem;
+        font-size: 0.9rem;
+        width: 25%;
+    }
+    .patient-name {
+        display: inline-block;
+        margin-bottom: 3px;
+        margin-right: 8px;
+    }
+}
+
+.no-data {
+    display: inline-block;
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+    color: darken($my-gray-color, 60%);
+    &--admission {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.patient-info {
+    position: fixed;
+    top: $header-height;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: $patient-info-width;
+    height: calc(100vh - #{$header-height});
+    background-color: lighten($my-gray-color, 2%);
+    border-left: 1px solid $my-darkgray-color;
+    &--head {
+        padding: .8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 0 0 100.59px;
+        color: darken($my-gray-color, 80%);
+        border-bottom: 1px solid $my-darkgray-color;
+        * {
+            display: inline;
+            font-size: 1rem;
+        }
+        #patient-name {
+            display: inline-block;
+            font-size: 1.2rem;
+            margin-bottom: 3px;
+            margin-right: 6px;
+            
+        }
+    }
+    &--body {
+        overflow: scroll;
+        padding: 0 .8rem .8rem .8rem;
+        font-size: .9rem;
+        * {
+            margin-bottom: 16px;
+        }
+    }
+    .patient-report-area {
+        display: flex;
+        overflow-x: scroll;
+        margin: 0 -.8rem 8px -.8rem;
+        padding: 12px 0;
+
+        // position: sticky;
+        // top: 0;
+        // border-bottom: 1px solid $my-darkgray-color;
+    }
+    .patient-report--btn {
+        flex: 0 0 auto;
+        padding: 6px 8px;
+        border: 1px solid darken($my-darkgray-color, 10%);
+        border-radius: 50px;
+        background-color: white;
+        margin: 4px;
+        cursor: pointer;
+        &:hover {
+            background-color: rgba($my-darkgray-color, 0.8);
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+        &__disable {
+            color: darken($my-darkgray-color, 20%);
+            background-color: darken($my-gray-color, 2%);
+            &:hover {
+                background-color: darken($my-gray-color, 2%);
+                cursor: not-allowed;
+            }
+        }
+    }
+    .nistpr-area {
+        .problem-title {
+            margin-bottom: 4px;
+        }
+        .nistpr-list {
+            color: darken($my-gray-color, 70%);
+            margin-left: .8rem;
+            font-size: .8rem;
+            li {
+                margin-bottom: 8px;
+                * {
+                    margin-right: 16px;
+                }
+            }
+        }
+    }
+    .patient-notes {
+        .problem-title {
+            margin-bottom: 4px;
+        }
+        .problem-notes {
+            color: darken($my-gray-color, 70%);
+        }
+        .problem-note {
+            margin-bottom: 8px;
+            padding-left: .8rem;
+            .problem-note-detail-group {
+                font-size: .8rem;
+                margin: 0;
+                * {
+                    margin-bottom: 2px;
+                }
+            }
+        }
+    }
+}
